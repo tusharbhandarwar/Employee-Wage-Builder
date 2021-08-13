@@ -2,29 +2,35 @@ package com.bridgelabz;
 
 public class EmployeeWageBuilder {
     //class level variable
-    private static int IS_FULL_TIME = 1;
-    private static int IS_PART_TIME = 2;
+
+    private static final int IS_FULL_TIME = 1;
+    private static final int IS_PART_TIME = 2;
     private static int WAGE_PER_HRS = 20;
 
     public static void main(String args[]) {
-        //UC3
+
+        //UC4
         empCheck();
     }
 
     public static void empCheck() {
         int empHrs = 0;
-        double value = Math.floor(Math.random() * 10) % 3;
-        if (value == IS_FULL_TIME) {
-            System.out.println("Employee is Present");
-            empHrs = 8;
-        } else if (value == IS_PART_TIME) {
-            System.out.println("Employee is PartTime Present");
-            empHrs = 4;
-        } else {
-            System.out.println("Employee is Absent");
-        }
-        double dailyEmpWage = WAGE_PER_HRS * empHrs;
-        System.out.println("Daily Employee Wage:" + dailyEmpWage);
+        int dailyEmpWage = 0;
+        int value = (int) Math.floor(Math.random() * 10) % 3;
+        switch ((int) value) {
+            case IS_FULL_TIME:
+                empHrs = 8;
+                System.out.println("Employee is Full time Present");
+                break;
 
+            case IS_PART_TIME:
+                empHrs = 4;
+                System.out.println("Employee is Part time Present");
+                break;
+            default:
+                System.out.println("Employee is Absent");
+        }
+        dailyEmpWage = WAGE_PER_HRS * empHrs;
+        System.out.println("Daily Employee Wage:" + dailyEmpWage);
     }
 }
