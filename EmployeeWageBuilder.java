@@ -7,23 +7,24 @@ public class EmployeeWageBuilder {
     private static int WAGE_PER_HRS = 20;
 
     public static void main(String args[]) {
-        //UC2
+        //UC3
         empCheck();
     }
+
     public static void empCheck() {
         int empHrs = 0;
         double value = Math.floor(Math.random() * 10) % 3;
         if (value == IS_FULL_TIME) {
-            empHrs = 8;
             System.out.println("Employee is Present");
+            empHrs = 8;
         } else if (value == IS_PART_TIME) {
-            empHrs = 4;
             System.out.println("Employee is PartTime Present");
+            empHrs = 4;
         } else {
-            empHrs = 0;
             System.out.println("Employee is Absent");
         }
         double dailyEmpWage = WAGE_PER_HRS * empHrs;
         System.out.println("Daily Employee Wage:" + dailyEmpWage);
+
     }
 }
